@@ -1,0 +1,184 @@
+html,
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    background-color: white;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+/* The website needs a background image in the main section at the top of the page.*/
+
+.main {
+    background-image: url('https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tsunami-coffee/images/bg-photo.png');
+    background-repeat: no-repat;
+    background-size: cover;
+    height: 30rem;
+    padding-top: 1rem;
+}
+
+.main img {
+    width: 15rem;
+    display: block;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+nav {
+    background-color: OrangeRed;
+    color: White;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+
+/* Add a padding of 0.75rem to the top and bottom, and 1.25rem to the left and right of the navigation’’s list items.*/
+
+li {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+}
+
+.supporting,
+.rating,
+.gallery,
+.location {
+    margin: 4em auto;
+}
+
+.supporting {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 1rem;
+}
+
+
+/* The coffee beans image under the main banner in the supporting section is too large. */
+
+.supporting img {
+    height: 10%;
+    margin-right: 5%;
+    width: 10%;
+}
+
+.rating {
+    background-color: OrangeRed;
+    height: 20rem;
+    padding: 0 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Use rem units to make the h1 text equivalent to 40 pixels. This can be calculated based on the html element’s font size. */
+
+.rating h1 {
+    font-size: 2.5rem;
+}
+
+.gallery img {
+    display: block;
+    width: 30%;
+    margin: 1.5%;
+    float: left;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.location {
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+
+/* The map image near the bottom of the page should span the page’’s width, instead of overflowing. */
+
+.location img {
+    width: 100%;
+}
+
+footer {
+    background-color: OrangeRed;
+    padding: 0 1rem;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5em 0;
+    color: white;
+}
+
+
+/* Write a media query that targets the screen when its width is under 960 pixels and smaller. */
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 960px) {
+    /* When the page is resized to a width less than 960 pixels, note that the navigation bar has empty space above it. Within the media query you wrote in the last step, set the top padding of the .main class to 0. */
+    .main {
+        padding-top: 0;
+    }
+}
+
+
+/* Write a media query for screens under 700 pixels. */
+
+@media only screen and (max-width: 700px) {
+    /* Inside the media query, make the image disappear by ensuring that the .supporting img selector displays nothing. */
+    .supporting img {
+        display: none;
+    }
+    /* Make the footer elements displayed vertically */
+    footer .container {
+        flex-direction: column;
+        padding: 1.5em 0;
+    }
+    .copyright {
+        padding-left: 20px;
+    }
+    footer nav ul li {
+        display: block;
+        text-align: center;
+    }
+}
+
+
+/* Write a media query that targets a screen width less than 470 pixels. */
+
+@media only screen and (max-width: 470px) {
+    /* First, make the rating’s h1 font size the equivalent of 32 pixels using rem units. */
+    .rating h1 {
+        font-size: 2rem;
+    }
+    /* Select the images in the gallery and style them so that they fill the width of the screen. */
+    .gallery img {
+        width: 100%;
+    }
+}
+
+
+/* Write a media query to make the top nav list to appear vertical for screens smaller than 360px */
+
+@media only screen and (max-width: 360px) {
+    nav ul li {
+        display: block;
+        text-align: center;
+        padding: 0.75rem 1rem 0.5rem 1rem;
+        ;
+    }
+}
